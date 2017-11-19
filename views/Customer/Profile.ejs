@@ -1,0 +1,459 @@
+<% include ../layouts/Header.ejs %>
+<link rel="stylesheet" href="../lib/iCheck/custom.css" />
+<link rel="stylesheet" href="../lib/daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" href="../lib_bower/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="../lib_bower/select2/dist/css/select2.css" />
+<link rel="stylesheet" href="../lib_bower/cropper/dist/cropper.min.css" />
+
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Profile</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action(" Dashboard_1 ", "Dashboards ")">Home</a>
+            </li>
+            <li>
+                <a>Customer</a>
+            </li>
+            <li class="active">
+                <strong>Profile</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div class="col-md-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Profile Detail</h5>
+                </div>
+                <div>
+                    <div class="ibox-content no-padding border-left-right">
+                        <img alt="image" class="img-responsive" src="../Images/profile_big.jpg">
+                    </div>
+                    <div class="ibox-content profile-content">
+                        <h4>
+                            <strong>Monica Smithxx</strong>
+                        </h4>
+                        <p>
+                            <i class="fa fa-map-marker"></i> Riviera State 32/106</p>
+                        <p>
+                            <i class="fa fa-phone" aria-hidden="true"></i> 0123444</p>
+                        <p>
+                            <i class="fa fa-mail-reply" aria-hidden="true"></i> acb@gmail.com</p>
+                        <p>
+                            <i class="fa fa-vcard" aria-hidden="true"></i> Employee </p>
+                        <div class="user-button">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary btn-sm btn-block">
+                                        <i class="fa fa-envelope"></i> Send Message</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-default btn-sm btn-block" data-toggle="modal" data-target="#myModal">
+                                        <i class="fa fa-coffee"></i> Upload Avatar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab-1"> Basic Information</a>
+                            </li>
+                            <li class="" id="emp">
+                                <a data-toggle="tab" href="#tab-2">Employee</a>
+                            </li>                           
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-1" class="tab-pane active">
+                                <div class="panel-body">
+                                    <form action="post" class="form-horizontal">
+                                        <div class="form-group" hidden="hidden">
+                                            <label class="col-sm-2 control-label">ID: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="ID">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">FirstName: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">LastName: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="LastName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Title: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="Title">
+                                                    <option value="SP">Ông</option>
+                                                    <option value="IN">Bà</option>
+                                                    <option value="GC">Anh</option>
+                                                    <option value="EM">Chị</option>
+                                                    <option value="SP">Cô</option>
+                                                    <option value="SP">Chú</option>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 control-label">Person Type: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="PersonType">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                    <option value="SP">Sale Person</option>
+                                                    <option value="IN">Customer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Phone: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="Phone">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Email: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Phone Type: </label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control m-b" name="PersonType">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                    <option value="SP">Sale Person</option>
+                                                    <option value="IN">Customer</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button class="btn btn-info"> More</button>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">City: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="ProviceID">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 control-label">District: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="ProviceID">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Ward: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="WardID">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 control-label">Address Type: </label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-b" name="AddressTypeID">
+                                                    <option value="GC">General Contact</option>
+                                                    <option value="EM">Employee</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Address Line: </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="AddressLine">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button class="btn btn-info"> More</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="tab-2" class="tab-pane">
+                                <div class="panel-body">
+                                    <form action="post" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">National ID Number: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="NationalIDNumber">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">LoginID: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Password: </label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Retype Password: </label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="data_1">
+                                            <label class="col-sm-2 control-label">BirthDate: </label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group date">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" value="03/04/2014">
+                                                </div>
+                                            </div>                                          
+                                            <div class="col-sm-4">
+                                                <div class="radio i-checks">
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" value="M" name="Gender">
+                                                        <i></i> Male </label>
+                                                </div>
+                                                <div class="radio i-checks">
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" checked="" value="F" name="Gender">
+                                                        <i></i> Female </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Martial Status: </label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control m-b" name="PersonType">
+                                                    <option value="GC">Single</option>
+                                                    <option value="EM">Married</option>
+                                                    <option value="SP">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Job Title: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Position: </label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="FirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="data_1">
+                                            <label class="col-sm-2 control-label">Hire: </label>
+                                            <div class="col-sm-4">
+                                                <div class="input-group date">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" value="03/04/2014">
+                                                </div>
+                                            </div>     
+                                            <label class="col-sm-2 control-label">Leave Date: </label>
+                                            <div class="col-sm-4">
+                                                <div class="input-group date">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                                    <input type="text" class="form-control" value="03/04/2014">
+                                                </div>
+                                            </div>        
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>                           
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal Avatar Upload -->
+<div class="modal inmodal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Upload your Avatar</h4>
+              
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-crop">
+                            <img src="../Images/p3.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Preview image</h4>
+                        <div class="img-preview img-preview-sm"></div>
+                        <h4>Comon method</h4>
+                        <p>
+                            You can upload new image to crop container and easy download new cropped image.
+                        </p>
+                        <div class="btn-group">
+                            <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                <input type="file" accept="image/*" name="file" id="inputImage" class="hide">
+                                Upload new image
+                            </label>
+                            <label title="Donload image" id="download" class="btn btn-primary">Download</label>
+                        </div>
+                        <h4>Other method</h4>
+                        <p>
+                            You may set cropper options with <code>$({image}).cropper(options)</code>
+                        </p>
+                        <div class="btn-group">
+                            <button class="btn btn-white" id="zoomIn" type="button">Zoom In</button>
+                            <button class="btn btn-white" id="zoomOut" type="button">Zoom Out</button>
+                            <button class="btn btn-white" id="rotateLeft" type="button">Rotate Left</button>
+                            <button class="btn btn-white" id="rotateRight" type="button">Rotate Right</button>
+                            <button class="btn btn-warning" id="setDrag" type="button">New crop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../layouts/Footer.ejs %>
+
+
+<script src="../lib_bower/moment/min/moment.min.js"></script>
+<script src="../lib/daterangepicker/daterangepicker.js"></script>
+<script src="../lib_bower/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../lib_bower/select2/dist/js/select2.min.js"></script>
+<script src="../lib/iCheck/icheck.min.js"></script>
+<script src="../lib_bower/cropper/dist/cropper.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        showTab('EMxs');
+        showiCheckGreen();
+        showCalendar();
+        showImageCropper();
+    });
+    function showTab(type) {
+
+        if (type === 'EM') {
+            $('#emp').hide();
+            $('#tab-2').hide();
+        }
+    }
+    function showiCheckGreen() {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    }
+    function showCalendar() {
+        $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+    }
+
+    function showImageCropper(){
+
+             var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+    }
+</script> 

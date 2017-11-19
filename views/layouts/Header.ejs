@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>  <%= title %>- ABC Computer </title>
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib_bower/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../lib_bower/metisMenu/dist/metisMenu.min.css" />
+    <link rel="stylesheet" href="../css/animate.css" />
+    <link rel="stylesheet" href="../css/style.css" asp-append-version="true" />
+</head>
+<body>
+
+    <!-- Skin Configuartion -->
+    <% include _SkinConfig.ejs %>
+
+        <!-- Wrapper-->
+        <div id="wrapper" class="@Html.PageClass()">
+
+            <!-- Navigation -->
+            <% include _Navigation.ejs %>
+
+            <!-- Page wraper -->
+            <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+
+            <!-- Top Navbar -->
+            <% include _TopNavbar.ejs %>
+
+             <!-- Content Page here -->
+             

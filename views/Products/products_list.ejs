@@ -1,0 +1,264 @@
+<% include ../layouts/Header.ejs %>
+<link rel="stylesheet" href="../lib/dataTables/datatables.min.css" />
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>E-commerce product list</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li>
+                <a>E-commerce</a>
+            </li>
+            <li class="active">
+                <strong>Product list</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+
+     <!-- Filter Advance -->
+     <div class="col-lg-12">
+        <div class="ibox float-e-margins border-bottom">
+            <div class="ibox-title">
+                <h5>
+                    Filter Form Adavance
+                </h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row" id="filter">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Name">Product Name</label>
+                            <input type="text" id="Name" name="Name" value="" placeholder="Product Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Price">Product Name</label>
+                            <input type="currency" id="Price" name="Price" value="" placeholder="Price" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="ProductNumber">Product Number</label>
+                            <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Name">Category</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="1" selected="">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row toggle-advance" style="display:none;">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Quantity">Quantity</label>
+                            <input type="text" id="Quantity" name="Quantity" value="" placeholder="Quantity" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="MeasureCode">Unit MeasureCode</label>
+                            <select name="MeasureCode" id="MeasureCode" class="form-control">
+                                <option value="1" selected="">TH</option>
+                                <option value="0">CA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Color">Color</label>
+                            <input type="text" id="Color" name="Color" value="" placeholder="Color" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group" id="data_1">
+                             <label class="control-label" for="DateCreate">Date Create</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer">
+                <!-- This is simple footer example -->
+                <span class="pull-right">
+                     <a class="collapse-link-advance">
+                        <i class="fa fa-angle-double-down"></i>
+                    </a>
+                    <!-- <a href="javascript:void(0)" id="more" role="button"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a> -->
+                </span>
+                <p>Click arrow to show more options</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Product Number</th>
+                                <th>Color</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Unit Measure</th>
+                                <th>Modified Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-white btn btn-xs">View</button>
+                                        <button class="btn-primary btn btn-xs">Edit</button>
+                                        <button class="btn-danger btn btn-xs">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-white btn btn-xs">View</button>
+                                        <button class="btn-primary btn btn-xs">Edit</button>
+                                        <button class="btn-danger btn btn-xs">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet
+                                    Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-white btn btn-xs">View</button>
+                                        <button class="btn-primary btn btn-xs">Edit</button>
+                                        <button class="btn-danger btn btn-xs">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<% include ../layouts/Footer.ejs %>
+<script src="../lib/dataTables/datatables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('.dataTables-example').DataTable({
+            pageLength: 25,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                { extend: 'copy' },
+                { extend: 'csv' },
+                { extend: 'excel', title: 'ExampleFile' },
+                { extend: 'pdf', title: 'ExampleFile' },
+
+                {
+                    extend: 'print',
+                    customize: function (win) {
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                    }
+                }
+            ]
+
+        });
+
+
+    });
+
+  
+</script>

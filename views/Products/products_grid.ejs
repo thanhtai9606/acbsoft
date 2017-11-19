@@ -1,0 +1,310 @@
+<% include ../layouts/Header.ejs %>
+
+<!-- Style CSS -->
+<link rel="stylesheet" href="../lib/iCheck/custom.css" />
+<link rel="stylesheet" href="../lib/daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" href="../lib_bower/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="../lib_bower/select2/dist/css/select2.css" />
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Products Grid</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action(" Dashboard_1 ", "Dashboards ")">Home</a>
+            </li>
+            <li>
+                <a>ProductsGrid</a>
+            </li>
+            <li class="active">
+                <strong>System's Products Grid</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- Filter Advance -->
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins border-bottom">
+            <div class="ibox-title">
+                <h5>
+                    Filter Form Adavance
+                </h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row" id="filter">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Name">Product Name</label>
+                            <input type="text" id="Name" name="Name" value="" placeholder="Product Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Price">Product Name</label>
+                            <input type="currency" id="Price" name="Price" value="" placeholder="Price" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="ProductNumber">Product Number</label>
+                            <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Name">Category</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="1" selected="">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="row toggle-advance" style="display:none;">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Quantity">Quantity</label>
+                            <input type="text" id="Quantity" name="Quantity" value="" placeholder="Quantity" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="MeasureCode">Unit MeasureCode</label>
+                            <select name="MeasureCode" id="MeasureCode" class="form-control">
+                                <option value="1" selected="">TH</option>
+                                <option value="0">CA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="Color">Color</label>
+                            <input type="text" id="Color" name="Color" value="" placeholder="Color" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group" id="data_1">
+                             <label class="control-label" for="DateCreate">Date Create</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer">
+                <!-- This is simple footer example -->
+                <span class="pull-right">
+                     <a class="collapse-link-advance">
+                        <i class="fa fa-angle-double-down"></i>
+                    </a>
+                    <!-- <a href="javascript:void(0)" id="more" role="button"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a> -->
+                </span>
+                <p>Click arrow to show more options</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="product-box">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+        
+                    <a href="#">
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                10,000 vnd
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <h3 href="#" class="product-name"> Product</h3>
+                    
+                    
+                    
+                            <div class="small m-t-xs">
+                                <p>Many desktop publishing packages and web page editors now.</p>
+                            </div>
+                            <div class="m-t text-righ">
+                    
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+        
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                10,000 vnd
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <a href="#" class="product-name"> Product</a>
+        
+        
+        
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-righ">
+        
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+        
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                10,000 vnd
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <a href="#" class="product-name"> Product</a>
+        
+        
+        
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-righ">
+        
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-box">
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+        
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                10,000 vnd
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <a href="#" class="product-name"> Product</a>
+        
+        
+        
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-righ">
+        
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<% include ../layouts/Footer.ejs %>
+
+<!-- Script -->
+<script src="../lib_bower/moment/min/moment.min.js"></script>
+<script src="../lib/daterangepicker/daterangepicker.js"></script>
+<script src="../lib_bower/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../lib_bower/select2/dist/js/select2.min.js"></script>
+<script src="../lib/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        showCalendar();
+        eachProduct();
+    });
+
+    function showiCheckGreen() {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    }
+
+    function showCalendar() {
+        $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true,
+            format: 'dd/mm/yyyy',
+            setDate: new Date(),
+            leftArrow: '&laquo;',
+            rightArrow: '&raquo;'
+            
+        });
+       
+    }
+    function eachProduct(){
+         $('.product-box').each(function () {
+            animationHover(this, 'bounce');
+        });
+    }
+</script>

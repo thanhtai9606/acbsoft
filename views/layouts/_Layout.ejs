@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Welcome to <%- title% > - ABC Computer</title>
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./lib_bower/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./lib_bower/metisMenu/dist/metisMenu.min.css" />
+    <link rel="stylesheet" href="./css/animate.css" />
+    <link rel="stylesheet" href="./css/style.css" asp-append-version="true" />
+</head>
+<body>
+
+    <!-- Skin Configuartion -->
+    <% inclide _SkinConfig.ejs%>
+
+        <!-- Wrapper-->
+        <div id="wrapper" class="@Html.PageClass()">
+
+            <!-- Navigation -->
+            <% include _Navigation.ejs%>
+
+            <!-- Page wraper -->
+            <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+
+            <!-- Top Navbar -->
+            <% include _TopNavbar.ejs %>
+
+                <!-- Main view  -->
+                @RenderBody()
+
+            <!-- Footer -->
+            <% include _Footer.ejs %>
+
+            </div>
+            <!-- End page wrapper-->
+
+            <!-- Right Sidebar -->
+            <% include _RightSidebar.ejs %>
+              
+        </div>
+        <script src="./lib/jquery/dist/jquery.js"></script>
+        <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./lib_bower/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="./lib_bower/pace/pace.min.js"></script>
+        <script src="./lib_bower/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="./js/script.js" asp-append-version="true"></script>
+          <!-- Only for demo purpose -->
+        <script src="./js/skin.config.js"></script>
+
+</body>
+
+</html>
