@@ -14,7 +14,10 @@ router.get('/Products_Edit', (req, res, next)=>{
     res.render('./Products/products_edit.ejs', {title: 'Products Edit Page'});
 });
 router.get('/Products_Detail', (req, res, next)=>{
-    res.render('./Products/products_detail.ejs', {title: 'Contact Detail Page'});
+    res.render('./Products/products_detail.ejs', {title: 'Products Detail Page'});
+});
+router.get('/Products_Cart', (req, res, next)=>{
+    res.render('./Products/products_cart.ejs', {title: 'Shopping Cart Page'});
 });
 
 

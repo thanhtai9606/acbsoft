@@ -1,0 +1,79 @@
+<div class="tabs-container">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a data-toggle="tab" href="#tab-1">
+                <i class="fa fa-desktop" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="">
+            <a data-toggle="tab" href="#tab-2">Mở rộng</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab-1" class="tab-pane active">
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Tên KH: </label>
+                        <div class="input-group col-lg-9 ">
+                            <input type="text" class="form-control" placeholder="Tìm khách hàng (F4)">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Địa chỉ: </label>
+
+                        <div class="col-lg-9">
+                            <input type="text" placeholder="Mã khách hàng" disabled="disabled" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Điện thoại: </label>
+
+                        <div class="col-lg-9">
+                            <input type="text" placeholder="Mã khách hàng" disabled="disabled" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div id="tab-2" class="tab-pane">
+            <div class="panel-body">               
+               <form action="" method="POST" class="form-horizontal" role="form">
+                      
+                      <div class="form-group">
+                          <label for="tax" class="col-sm-2 control-label">Thuế: </label>
+                          <div class="col-sm-10">
+                              <input type="text" name="Tax" id="tax" class="form-control" value="" required="required" pattern="" title="">
+                          </div>
+                      </div>                      
+                       
+                       <div class="form-group">
+                           <label for="ListPrice" class="col-sm-2 control-label">Bảng giá:</label>
+                           <div class="col-sm-2">
+                               <select name="ListPrice" id="ListPrice" class="form-control" required="required">
+                                   <option value="">Bán lẻ</option>
+                                   <option value="">Buôn</option>
+                               </select>
+                           </div>
+                       </div>
+                       
+               
+                       <div class="form-group">
+                           <div class="col-sm-10 col-sm-offset-2">
+                               <button type="submit" class="btn btn-primary">Submit</button>
+                           </div>
+                       </div>
+               </form>
+               
+            </div>
+        </div>
+    </div>
+
+
+</div>

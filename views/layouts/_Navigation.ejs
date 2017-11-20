@@ -28,7 +28,7 @@
                 <li class="@Html.IsSelected(controller: "Dashboards")">
                     <a href="@Url.Action("Dashboard_1", "Dashboards")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboard</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Dashboards", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Dashboard v.1</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="/Dashboards/">Dashboard v.1</a></li>
                         <li class="@Html.IsSelected(action: "Dashboard_2")"><a href="@Url.Action("Dashboard_2", "Dashboards")">Dashboard v.2</a></li>
                         <li class="@Html.IsSelected(action: "Dashboard_3")"><a href="@Url.Action("Dashboard_3", "Dashboards")">Dashboard v.3</a></li>
                         <li class="@Html.IsSelected(action: "Dashboard_4_1")"><a href="@Url.Action("Dashboard_4_1", "Dashboards")">Dashboard v.4</a></li>
@@ -38,7 +38,7 @@
                 <li class="@Html.IsSelected(controller: "Sale")">
                     <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label" data-i18n="nav.Sale">Sale</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Sale", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "Flot")"><a href="@Url.Action("Flot", "Sale")">Sale Desktop</a></li>
+                        <li class="@Html.IsSelected(action: "Flot")"><a href="/Sales/">Sale Desktop</a></li>
                         <li class="@Html.IsSelected(action: "Morris")"><a href="@Url.Action("Morris", "Sale")">Morris.js Charts</a></li>
                         <li class="@Html.IsSelected(action: "Rickshaw")"><a href="@Url.Action("Rickshaw", "Sale")">Rickshaw Charts</a></li>
                         <li class="@Html.IsSelected(action: "Chartjs")"><a href="@Url.Action("Chartjs", "Sale")">Chart.js</a></li>
@@ -79,6 +79,7 @@
                         <li class="@Html.IsSelected(action: "ProductsList")"><a href="/Products/Products_List">Products List</a></li>
                         <li class="@Html.IsSelected(action: "ProductEdit")"><a href="/Products/Products_Edit">Product Edit</a></li>
                         <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Detail">Product Detail</a></li>
+                        <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Cart">Shopping Cart</a></li>
                     </ul>
                 </li>
                 <li class="@Html.IsSelected(controller: "Customer")">

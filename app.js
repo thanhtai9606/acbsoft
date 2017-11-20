@@ -29,12 +29,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 // Load All Controller
-//var Dashboard = require('./routes/DashboardsController');
+var Dashboard = require('./routes/DashboardsController');
 var Customer = require('./routes/CustomerController');
 var Products = require('./routes/ProductsController');
-//app.use('/',Dashboard);
+var Sales = require('./routes/SalesController');
+
+app.use('/',Dashboard);
 app.use('/Customer/', Customer);
 app.use('/Products/', Products);
+app.use('/Sales/',Sales);
 // error handling middleware should be loaded after the loading the routes
 if (app.get('env') === 'development') {
   app.use(errorHandler())
