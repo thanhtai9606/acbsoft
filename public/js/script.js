@@ -199,6 +199,8 @@ $(document).ready(function () {
         var boxedlayout = localStorage.getItem("boxedlayout");
         var fixedfooter = localStorage.getItem("fixedfooter");
 
+        var hidenavbar = localStorage.getItem("hidenavbar");
+
         var body = $('body');
 
         if (fixedsidebar == 'on') {
