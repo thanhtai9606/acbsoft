@@ -1,0 +1,360 @@
+<% include ../layouts/Header.ejs %>
+<link rel="stylesheet" href="../lib/dataTables/datatables.min.css" />
+<link href="../lib_bower/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="../lib_bower/datatables/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../lib/iCheck/custom.css" />
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="ibox float-e-margins border-bottom">
+                <div class="ibox-title">
+                    <h5>
+                        Thông tin đơn hàng
+                    </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row" id="filter">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="Name">Nhà cung cấp</label>
+                                <input type="text" id="Name" name="Name" value="" placeholder=" Chọn nhà cung cấp " class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="Price">Địa chỉ</label>
+                                <input type="currency" id="Price" name="Price" value="" placeholder="Price" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="ProductNumber">Điện thoại</label>
+                                <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="Name">Xếp hạng</label>
+                                <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <label class="control-label" for="Name">Status</label>
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row toggle-advance" style="display:none;">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="Name">Sản phẩm</label>
+                                <input type="text" id="Name" name="Name" value="" placeholder="Chọn sản phẩm " class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="Quantity">Số lượng</label>
+                                <input type="text" id="Quantity" name="Quantity" value="" placeholder="Quantity" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="Price">Giá nhập</label>
+                                <input type="currency" id="Price" name="Price" value="" placeholder="Price" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group" id="data_1">
+                                <label class="control-label" for="btnAdd">Thêm vào giỏ hàng</label>
+                                <button class="btn btn-outline btn-success btn-block" name="btnAdd">Thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-footer">
+                    <!-- This is simple footer example -->
+                    <span class="pull-right">
+                        <a class="collapse-link-advance">
+                            <i class="fa fa-angle-double-down"></i>
+                        </a>
+                        <!-- <a href="javascript:void(0)" id="more" role="button"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a> -->
+                    </span>
+                    <p>Click arrow to show more options</p>
+        
+                </div>
+            </div>
+            <div class="ibox float-e-margins border-bottom">
+                <div class="ibox-title">
+                    <h5>
+                        Thông tin đơn hàng
+                    </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#">Config option 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Config option 2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+        
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Product Number</th>
+                                <th>Color</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Unit Measure</th>
+                                <th>Modified Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-danger btn "><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-danger btn ">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="gradeX">
+                                <td>Trident</td>
+                                <td>
+                                    Internet Explorer 4.0
+                                </td>
+                                <td>12345</td>
+                                <td class="center">Red</td>
+                                <td class="center">1,230 $</td>
+                                <td>20</td>
+                                <td>Thung</td>
+                                <td>12/12/2017 20:08:23</td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-danger btn ">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>                      
+                    </table>
+        
+                </div>               
+            </div>        
+        </div>
+        <div class="col-md-3">
+        
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Giỏ hàng</h5>
+                </div>
+                <div class="ibox-content">
+                    <fieldset class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">SLượng: </label>
+                            <div class="col-lg-8 ">
+                                <h4 class="control-label text-right text-info" name="TotalLine" id="TotalLine"> 0 </h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">VAT: </label>
+                
+                            <div class="col-lg-8 ">
+                                <h4 class=" control-label text-success text-right" name="VAT" id="VAT"> 0 </h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Tổng: </label>
+                            <div class="col-lg-8 ">
+                                <h3 class="font-bold control-label text-danger text-right" name="VAT" id="VAT"> 0 vnđ </h3>
+                            </div>
+                        </div>
+                
+                
+                        <div class="form-group">
+                            <label for="thanhtoan" class="col-sm-4 control-label">Thanh toán:</label>
+                            <div class="col-sm-8 ">
+                                <select name="" id="thanhtoan" class="form-control" required="required">
+                                    <option value="">Tất cả</option>
+                                    <option value="">Một phần</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                     
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-shopping-cart"></i> Checkout</a>
+                                <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+</div>
+<% include ../layouts/Footer.ejs %>
+<script src="../lib_bower/jquery-ui/jquery-ui.js"></script>
+<script src="../lib/touchpunch/jquery.ui.touch-punch.min.js"></script>
+<script src="../lib/dataTables/datatables.min.js"></script>
+<!-- extend datatables -->
+<script src="../lib_bower/datatables/jszip.min.js"></script>
+<script src="../lib_bower/datatables/pdfmake.min.js"></script>
+<script src="../lib_bower/datatables/vfs_fonts.js"></script>
+<script src="../lib_bower/datatables/buttons.html5.min.js"></script>
+<script src="../lib_bower/datatables/buttons.print.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.keyTable.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.responsive.min.js"></script>
+<script src="../lib_bower/datatables/responsive.bootstrap.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.scroller.min.js"></script>
+<script src="../lib_bower/datatables/buttons.colVis.min.js"></script>
+
+<!-- ICheck Green -->
+<script src="../lib/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            WinMove();
+            showDataTables();
+            rowClickEvent();
+            showICheckGreen();
+           
+        });
+
+        function showDataTables() {
+                $('.dataTables-example').DataTable({
+                    pageLength: 10,
+                    dom: '<"html5buttons"B>lTfgitp',
+                    buttons: [
+                        { extend: 'copy' },
+                        { extend: 'csv' },
+                        { extend: 'excel', title: 'ExampleFile' },
+                        { extend: 'pdf', title: 'ExampleFile' },
+
+                        {
+                            extend: 'print',
+                            customize: function (win) {
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                            }
+                        },
+                        {
+                            extend: "colvis",
+                            className: "btn-sm",
+                            text: "Ẩn/hiện"
+                        }
+                    ],
+                    "columnDefs": [
+                        // {
+                        //     "targets": [2],
+                        //     "visible": false,                               
+                        // },
+                        // {
+                        //     "targets": [3],
+                        //     "visible": false
+                        // }
+                    ],
+                    select: true,           
+                    responsive: !0,
+                    keys: true
+
+                });                 
+          
+        }
+        function rowClickEvent() {
+          var table = $('.dataTables-example').DataTable();
+            
+           $('.dataTables-example tbody').on('click', 'tr', function () {
+               var data = table.row( this ).data();
+               alert( 'You clicked on '+data[0]+'\'s row' );
+               $('#Qty').prop('disabled', false);
+           } );
+        }
+
+        function showICheckGreen(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        }
+
+
+    </script>

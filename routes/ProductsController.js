@@ -20,5 +20,8 @@ router.get('/Products_Cart', (req, res, next)=>{
     res.render('./Products/products_cart.ejs', {title: 'Shopping Cart Page'});
 });
 
+router.get('/Products_Order', (req, res, next)=>{
+    res.render('./Products/products_order.ejs', {title: 'Products Order Page'});
+});
 
 module.exports = router;

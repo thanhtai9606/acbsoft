@@ -1,4 +1,7 @@
 <% include ../layouts/Header.ejs %>
+<link rel="stylesheet" href="../lib/dataTables/datatables.min.css" />
+<link href="../lib_bower/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="../lib_bower/datatables/dataTables.bootstrap.min.css" rel="stylesheet" />
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2>E-commerce shoping cart</h2>
@@ -20,9 +23,6 @@
 </div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
-
-
-
     <div class="row">
         <div class="col-md-9">
 
@@ -35,7 +35,7 @@
 
 
                     <div class="table-responsive">
-                        <table class="table shoping-cart-table">
+                        <table class="table shoping-cart-table" >
 
                             <tbody>
                                 <tr>
@@ -370,8 +370,84 @@
         </div>
     </div>
 
-
-
-
 </div>
 <% include ../layouts/Footer.ejs %>
+
+<script src="../lib/dataTables/datatables.min.js"></script>
+<!-- extend datatables -->
+<script src="../lib_bower/datatables/jszip.min.js"></script>
+<script src="../lib_bower/datatables/pdfmake.min.js"></script>
+<script src="../lib_bower/datatables/vfs_fonts.js"></script>
+<script src="../lib_bower/datatables/buttons.html5.min.js"></script>
+<script src="../lib_bower/datatables/buttons.print.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.keyTable.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.responsive.min.js"></script>
+<script src="../lib_bower/datatables/responsive.bootstrap.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.scroller.min.js"></script>
+<script src="../lib_bower/datatables/buttons.colVis.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            showDataTables();
+            rowClickEvent();
+           
+        });
+
+        function showDataTables() {
+                $('.dataTables-example').DataTable({
+                    pageLength: 10,
+                    dom: '<"html5buttons"B>lTfgitp',
+                    buttons: [
+                        { extend: 'copy' },
+                        { extend: 'csv' },
+                        { extend: 'excel', title: 'ExampleFile' },
+                        { extend: 'pdf', title: 'ExampleFile' },
+
+                        {
+                            extend: 'print',
+                            customize: function (win) {
+                                $(win.document.body).addClass('white-bg');
+                                $(win.document.body).css('font-size', '10px');
+
+                                $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                            }
+                        },
+                        {
+                            extend: "colvis",
+                            className: "btn-sm",
+                            text: "Ẩn/hiện"
+                        }
+                    ],
+                    "columnDefs": [
+                        // {
+                        //     "targets": [2],
+                        //     "visible": false,                               
+                        // },
+                        // {
+                        //     "targets": [3],
+                        //     "visible": false
+                        // }
+                    ],
+                    select: true,           
+                    responsive: !0,
+                    keys: true
+
+                });                 
+          
+        }
+        function rowClickEvent() {
+          var table = $('.dataTables-example').DataTable();
+            
+           $('.dataTables-example tbody').on('click', 'tr', function () {
+               var data = table.row( this ).data();
+               alert( 'You clicked on '+data[0]+'\'s row' );
+               $('#Qty').prop('disabled', false);
+           } );
+        }
+
+
+    </script>
