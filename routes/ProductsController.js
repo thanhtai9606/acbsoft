@@ -24,4 +24,7 @@ router.get('/Products_Order', (req, res, next)=>{
     res.render('./Products/products_order.ejs', {title: 'Products Order Page'});
 });
 
+router.get('/Products_Category', (req, res, next)=>{
+    res.render('./Products/products_categories.ejs', {title: 'Products Order Page'});
+});
 module.exports = router;

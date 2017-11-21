@@ -38,7 +38,7 @@
                 <li class="@Html.IsSelected(controller: "Sale")">
                     <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label" data-i18n="nav.Sale">Sale</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Sale", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "Flot")"><a href="/Sales/">Sale Desktop</a></li>
+                        <li class="@Html.IsSelected(action: "Flot")"><a href="/Sales/">Desk Bán Hàng</a></li>
                         <li class="@Html.IsSelected(action: "Morris")"><a href="@Url.Action("Morris", "Sale")">Morris.js Charts</a></li>
                         <li class="@Html.IsSelected(action: "Rickshaw")"><a href="@Url.Action("Rickshaw", "Sale")">Rickshaw Charts</a></li>
                         <li class="@Html.IsSelected(action: "Chartjs")"><a href="@Url.Action("Chartjs", "Sale")">Chart.js</a></li>
@@ -51,13 +51,11 @@
                 <li class="@Html.IsSelected(controller: "Order")">
                     <a href="#"><i class="fa fa-truck"></i> <span class="nav-label" data-i18n="nav.Order">Nhập hàng </span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Order", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "BasicFroms")"><a href="@Url.Action("BasicFroms", "Order")">Basic form</a></li>
-                        <li class="@Html.IsSelected(action: "Advanced")"><a href="@Url.Action("Advanced", "Order")">Advanced Plugins</a></li>
-                        <li class="@Html.IsSelected(action: "Wizard")"><a href="@Url.Action("Wizard", "Order")">Wizard</a></li>
-                        <li class="@Html.IsSelected(action: "FileUpload")"><a href="@Url.Action("FileUpload", "Order")">File Upload</a></li>
-                        <li class="@Html.IsSelected(action: "TextEditor")"><a href="@Url.Action("TextEditor", "Order")">Text Editor</a></li>
-                        <li class="@Html.IsSelected(action: "Autocomplete")"><a href="@Url.Action("Autocomplete", "Order")">Autocomplete</a></li>
-                        <li class="@Html.IsSelected(action: "Markdown")"><a href="@Url.Action("Markdown", "Order")">Markdown</a></li>
+                        <li class="@Html.IsSelected(action: "BasicFroms")"><a href="/Order/Order">Desk Nhập hàng</a></li>
+                        <li class="@Html.IsSelected(action: "Advanced")"><a href="@Url.Action("Advanced", "Order")">Trả Hàng</a></li>
+                        <li class="@Html.IsSelected(action: "Wizard")"><a href="@Url.Action("Wizard", "Order")">Kiểm Hàng</a></li>
+                        <li class="@Html.IsSelected(action: "FileUpload")"><a href="/Order/Vendor">Nhà Cung Cấp</a></li>
+                        <li class="@Html.IsSelected(action: "TextEditor")"><a href="/Order/Vendor_Group">Nhóm Nhà Cung Cấp</a></li>
                     </ul>
                 </li>
                 <li class="@Html.IsSelected(controller: "Invoice")">
@@ -81,6 +79,7 @@
                         <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Detail">Product Detail</a></li>
                         <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Cart">Shopping Cart</a></li>
                         <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Order">Products Order</a></li>
+                        <li class="@Html.IsSelected(action: "ProductDetail")"><a href="/Products/Products_Category">Products Category</a></li>
                     </ul>
                 </li>
                 <li class="@Html.IsSelected(controller: "Customer")">

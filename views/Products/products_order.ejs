@@ -51,18 +51,18 @@
                                 <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
                             </div>
                         </div>
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                                <label class="control-label" for="Name">Xếp hạng</label>
-                                <input type="text" id="ProductNumber" ProductNumber="ProductNumber" value="" placeholder="Product ProductNumber" class="form-control">
-                            </div>
-                        </div>
                         <div class="col-sm-1">
                             <div class="form-group">
-                                <label class="control-label" for="Name">Status</label>
+                                <label class="control-label" for="Name">Xếp hạng</label>
+                                <h4 class="control-label text-navy"> 2</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label" for="Name">Trạng thái</label>
                                 <div class="checkbox i-checks">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" value="" checked="checked">
                                         <i></i>
                                     </label>
                                 </div>
@@ -73,7 +73,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label" for="Name">Sản phẩm</label>
-                                <input type="text" id="Name" name="Name" value="" placeholder="Chọn sản phẩm " class="form-control">
+                                <input type="text" id="Name" name="Name" value="" placeholder=" Tìm sản phẩm " class="form-control">
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -222,20 +222,19 @@
                         <div class="form-group">
                             <label class="col-lg-4 control-label">SLượng: </label>
                             <div class="col-lg-8 ">
-                                <h4 class="control-label text-right text-info" name="TotalLine" id="TotalLine"> 0 </h4>
+                                <h4 class="control-label text-right text-info" name="TotalLine" id="TotalLine"> 50 </h4>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label">VAT: </label>
-                
+                            <label class="col-lg-4 control-label text-left">VAT: </label>                
                             <div class="col-lg-8 ">
-                                <h4 class=" control-label text-success text-right" name="VAT" id="VAT"> 0 </h4>
+                                <h4 class=" control-label text-success text-right" name="VAT" id="VAT"> 1,1123 vnd </h4>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4 control-label">Tổng: </label>
                             <div class="col-lg-8 ">
-                                <h3 class="font-bold control-label text-danger text-right" name="VAT" id="VAT"> 0 vnđ </h3>
+                                <h3 class="font-bold control-label text-navy text-right" name="VAT" id="VAT"> 51,123,000 vnđ </h3>
                             </div>
                         </div>
                 
@@ -244,19 +243,33 @@
                             <label for="thanhtoan" class="col-sm-4 control-label">Thanh toán:</label>
                             <div class="col-sm-8 ">
                                 <select name="" id="thanhtoan" class="form-control" required="required">
-                                    <option value="">Tất cả</option>
-                                    <option value="">Một phần</option>
+                                    <option value="all">Tất cả</option>
+                                    <option value="one">Một phần</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="debt">
+                            <label for="thanhtoan" class="col-sm-4 control-label">Số tiền:</label>
+                            <div class="col-sm-8 ">
+                                <input type="text" class="form-control" placeholder="Nhập số tiền thanh toán">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Nợ: </label>
+                            <div class="col-lg-8 ">
+                                <h3 class="font-bold control-label text-danger text-right" name="VAT" id="VAT"> 51,123,000 vnđ </h3>
                             </div>
                         </div>
                         <hr />
                      
                         <div class="form-group">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-shopping-cart"></i> Checkout</a>
-                                <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                            <div class="col-lg-7">
+                                <button class="btn btn-success">Thanh toán (F4)</button>
                             </div>
+                            <div class="col-lg-5">
+                                <button class="btn btn-block btn-white">Hủy (F1)</button>
+                            </div>
+                        
                         </div>
                     </fieldset>
                 </div>

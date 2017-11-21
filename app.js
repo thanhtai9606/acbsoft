@@ -33,11 +33,14 @@ var Dashboard = require('./routes/DashboardsController');
 var Customer = require('./routes/CustomerController');
 var Products = require('./routes/ProductsController');
 var Sales = require('./routes/SalesController');
+var Order = require('./routes/OrderController');
 
 app.use('/',Dashboard);
 app.use('/Customer/', Customer);
 app.use('/Products/', Products);
 app.use('/Sales/',Sales);
+app.use('/Order/',Order);
+
 // error handling middleware should be loaded after the loading the routes
 if (app.get('env') === 'development') {
   app.use(errorHandler())
