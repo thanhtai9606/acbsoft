@@ -43,7 +43,6 @@
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
                         <div class="panel-body">
-
                             <fieldset class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Tên sản phẩm:</label>
@@ -103,7 +102,20 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Minimum quantity:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" placeholder="2"></div>
-                                </div>                               
+                                </div>  
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Waranty:</label>
+                                    <div class="col-sm-10">
+                                        <select name="Waranty" id="Waranty" class="form-control">
+                                            <option value="A">1 Tháng</option>
+                                            <option value="A">2 Tháng</option>
+                                            <option value="A">6 Tháng</option>
+                                            <option value="A">12 Tháng</option>
+                                            <option value="A">24 Tháng</option>
+                                            <option value="A">36 Tháng</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </fieldset>
 
 
@@ -112,11 +124,9 @@
                     <div id="tab-3" class="tab-pane">
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div class="col-lg-4 col-lg-offset-11">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
-                                </div>
+                               
                                 <table class="table table-stripped table-bordered">
-
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                                     <thead>
                                         <tr>
                                             <th>

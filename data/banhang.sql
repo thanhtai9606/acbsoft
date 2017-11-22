@@ -252,6 +252,7 @@ CREATE TABLE [Product].[Product] (
     [Quantity]              INT              NOT NULL,
     [ListPrice]             MONEY            NOT NULL,
     [SizeUnitMeasureCode]   NCHAR (3)        NULL,
+    [Waranty]               SMALLINT         NULL,
     [Descriptions]          NVARCHAR (256)   NULL,
     [Tags]                  NVARCHAR (100)   NULL,
     [rowguid]               UNIQUEIDENTIFIER CONSTRAINT [DF_Product_rowguid] DEFAULT (newid()) ROWGUIDCOL NOT NULL,

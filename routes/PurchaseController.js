@@ -4,6 +4,7 @@ var router = express();
 router.get('/', (req, res, next)=>{
     res.render('./Purchase/purchase_desktop.ejs', {title: 'Purchase Desk Page'});
 });
+
 router.get('/Header', (req, res, next)=>{
     res.render('./Purchase/purchase_header.ejs', {title: 'Purchase Header Page'});
 });
