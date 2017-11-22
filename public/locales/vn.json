@@ -1,39 +1,53 @@
 {
   "app": {
-    "name": "INSPINIA 2.4"
+    "name": "ACBComputer 1.0.1"
   },
   "nav": {
-    "dashboard": "Salpicadero",
-    "graphs": "Gráficos",
-    "mailbox": "El correo",
-    "widgets": "Widgets",
-    "metrics": "Métrica",
-    "forms": "Formas",
-    "appviews": "Vistas app",
-    "otherpages": "Otras páginas",
-    "uielements": "UI elements",
-    "miscellaneous": "Misceláneo",
-    "gridoptions": "Cuadrícula",
-    "tables": "Tablas",
-    "commerce": "E-comercio",
-    "gallery": "Galería",
-    "menulevels": "Niveles de menú",
-    "animations": "Animaciones",
-    "landing": "Página de destino",
-    "layouts": "Esquemas",
-    "package": "Paquetes"
+    "dashboard": "Bảng điều khiển",
+    "sale": "Bán hàng",
+    "purchase": "Nhập hàng",
+    "invoice": "Hóa đơn",
+    "product": "Sản phẩm",
+    "contact": "Liên hệ",
+    "finance": "Ngân quỹ",
+    "system": "Hệ thống"
   },
+  "nav-detail":{
+    "dashboard_1":"Bảng 1",
+    "dashboard_2":"Bảng 2",
+    "dashboard_3":"Bảng 3",
+    "dashboard_4":"Bảng 4",
+    "dashboard_5":"Bảng 5",
+    "sale-desktop":"Desk Bán hàng",
+    "sale-history":"Lịch sử Bán hàng",
+    "sale-return":"Trả Hàng bán",
+    "sale-consumer":"Khách Hàng",
+    "purchase-desktop":"Desk Nhập hàng",
+    "purchase-history":"Lịch sử Nhập hàng",
+    "purchase-return":"Trả Hàng nhập",
+    "purchase-vendor":"Nhà Cung cấp",
+    "purchase-inventory":"Kiểm Kho",
+    "product-grid":"Hiển thị Lưới",
+    "product-list":"Hiển thị Danh sách",
+    "product-detail":"Chi tiết",
+    "product-category":"Nhóm Sản phẩm",
+    "contact-v1":"Liên hệ",
+    "contact-v2":"Liên hệ v2",
+    "contact-profile":"Hồ sơ",
+    "contact-list":"Danh sách"
+  }
+  ,
   "body": {
-    "welcome": "Bienvenido Amelia"
+    "welcome": "Chào mừng đến với phần mềm bán hàng của ACBComputer"
 
   },
   "topnav":
   {
     "messageinfo": "Usted tiene 42 mensajes y 6 notificaciones.",
-    "search": "Buscar algo...",
-    "logout": "Cerrar sesión",
-    "welcometext": "Bienvenido a INSPINIA + administración Tema.",
-    "language": "Lenguaje"
+    "search": "Tìm kiếm...",
+    "logout": "Đăng xuất",
+    "welcometext": "Chào mừng đến với ACB Computer. ",
+    "language": "Ngôn ngữ"
   },
   "demo": {
     "text1": "Internacionalización (a veces abreviado como \"I18N, que significa\" I - dieciocho letras N \") es el proceso de planificación e implementación de productos y servicios de manera que se pueden adaptar fácilmente a las lenguas y culturas locales específicas, un proceso llamado localización El proceso de internacionalización. a veces se llama la traducción o la habilitación de localización."

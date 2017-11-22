@@ -35,10 +35,10 @@
         <div class="col-lg-12">
             <div class="tabs-container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#tab-1"> Product info</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-2"> Data</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-3"> Discount</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-4"> Images</a></li>
+                    <li class="active"><a data-toggle="tab" href="#tab-1"> Sản phẩm</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-2"> Dữ liệu</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3"> Giảm giá</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-4"> Ảnh</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
@@ -46,15 +46,15 @@
 
                             <fieldset class="form-horizontal">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Name:</label>
+                                    <label class="col-sm-2 control-label">Tên sản phẩm:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" placeholder="Product name"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Price:</label>
+                                    <label class="col-sm-2 control-label">Giá bán:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" placeholder="$160.00"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Description:</label>
+                                    <label class="col-sm-2 control-label">Mô tả:</label>
                                     <div class="col-sm-10">
                                         <div class="summernote">
                                             <h3>Lorem Ipsum is simply</h3>
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Meta Tag Title:</label>
+                                    <label class="col-sm-2 control-label">Thẻ:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" placeholder="..."></div>
                                 </div>                              
                             </fieldset>
@@ -111,29 +111,31 @@
                     </div>
                     <div id="tab-3" class="tab-pane">
                         <div class="panel-body">
-
                             <div class="table-responsive">
+                                <div class="col-lg-4 col-lg-offset-11">
+                                    <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                                </div>
                                 <table class="table table-stripped table-bordered">
 
                                     <thead>
                                         <tr>
                                             <th>
-                                               Customer Group
+                                               Nhóm
                                             </th>
                                             <th>
-                                                Quantity
+                                                Số lượng
                                             </th>
                                             <th>
-                                                Discount
+                                                Giảm giá
                                             </th>
                                             <th style="width: 20%">
-                                                Date start
+                                                Ngày bắt đầu
                                             </th>
                                             <th style="width: 20%">
-                                                Date end
+                                                Ngày kết thúc
                                             </th>
                                             <th>
-                                                Actions
+                                                Thao tác
                                             </th>
                                         </tr>
                                     </thead>
@@ -352,8 +354,12 @@
                     </div>
                     <div id="tab-4" class="tab-pane">
                         <div class="panel-body">
-
                             <div class="table-responsive">
+                                <div class="col-lg-4 col-lg-offset-11">
+                                    <button type="button" class="btn btn-primary">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
                                 <table class="table table-bordered table-stripped">
                                     <thead>
                                         <tr>

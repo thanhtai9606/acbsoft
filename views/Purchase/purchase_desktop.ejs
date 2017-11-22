@@ -53,13 +53,13 @@
                         </div>
                         <div class="col-sm-1">
                             <div class="form-group">
-                                <label class="control-label" for="Name">Xếp hạng</label>
+                                <label class="control-label" for="Name">XHạng</label>
                                 <h4 class="control-label text-navy"> 2</h4>
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <label class="control-label" for="Name">Trạng thái</label>
+                                <label class="control-label" for="Name">Còn hoạt động</label>
                                 <div class="checkbox i-checks">
                                     <label>
                                         <input type="checkbox" value="" checked="checked">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row toggle-advance" style="display:none;">
+                    <div class="row toggle-advance">
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label" for="Name">Sản phẩm</label>
@@ -95,17 +95,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="ibox-footer">
-                    <!-- This is simple footer example -->
-                    <span class="pull-right">
-                        <a class="collapse-link-advance">
-                            <i class="fa fa-angle-double-down"></i>
-                        </a>
-                        <!-- <a href="javascript:void(0)" id="more" role="button"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a> -->
-                    </span>
-                    <p>Click arrow to show more options</p>
-        
                 </div>
             </div>
             <div class="ibox float-e-margins border-bottom">
@@ -215,33 +204,60 @@
         
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Giỏ hàng</h5>
+                    <h5>Thông tin giỏ hàng</h5>
+
                 </div>
                 <div class="ibox-content">
                     <fieldset class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-lg-4 control-label">SLượng: </label>
+                            <label class="col-lg-4 control-label">Số Lượng: </label>
                             <div class="col-lg-8 ">
                                 <h4 class="control-label text-right text-info" name="TotalLine" id="TotalLine"> 50 </h4>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label text-left">VAT: </label>                
-                            <div class="col-lg-8 ">
-                                <h4 class=" control-label text-success text-right" name="VAT" id="VAT"> 1,1123 vnd </h4>
+                            <label class="col-lg-3 control-label text-left">VAT: </label>                
+                            <div class="col-lg-9 ">
+                                <h4 class=" control-label text-warning text-right" name="VAT" id="VAT"> 1,1123 vnd </h4>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label">Tổng: </label>
-                            <div class="col-lg-8 ">
+                            <label class="col-lg-3 control-label">Tổng: </label>
+                            <div class="col-lg-9 ">
                                 <h3 class="font-bold control-label text-navy text-right" name="VAT" id="VAT"> 51,123,000 vnđ </h3>
                             </div>
                         </div>
-                
-                
+                        <div class="hr-line-dashed"></div>                        
                         <div class="form-group">
-                            <label for="thanhtoan" class="col-sm-4 control-label">Thanh toán:</label>
-                            <div class="col-sm-8 ">
+                            <label for="Status" class="col-lg-3 control-label">Trạng thái:</label>
+                            <div class="col-lg-9">
+                                <select name="Status" id="Status" class="form-control" required="required">                                   
+                                    <option value="1">Đang xử lý</option>
+                                    <option value="2">Đã duyệt</option>
+                                    <option value="3">Hủy</option>
+                                    <option value="4">Hoàn thành</option>
+                                </select>
+                            </div>
+                        </div>                        
+                        <div class="" id="date_confirm">
+                            <div class="form-group date">
+                                <label for="OrderDate" class="col-lg-3 control-label">Ngày đặt:</label>
+                                <div class="col-lg-9">
+                                    <input type="date" name="" id="OrderDate" class="form-control" value="" required="required" pattern="" title="">
+                                </div>
+                            </div>
+                            <div class="form-group date">
+                                <label for="ShipDate" class="col-lg-3 control-label">Ngày giao:</label>
+                                <div class="col-lg-9">
+                                    <input type="date" name="" id="ShipDate" class="form-control" value="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <label for="thanhtoan" class="col-sm-3 control-label">Thanh toán:</label>
+                            <div class="col-sm-9 ">
                                 <select name="" id="thanhtoan" class="form-control" required="required">
                                     <option value="all">Tất cả</option>
                                     <option value="one">Một phần</option>
@@ -249,27 +265,21 @@
                             </div>
                         </div>
                         <div class="form-group" id="debt">
-                            <label for="thanhtoan" class="col-sm-4 control-label">Số tiền:</label>
-                            <div class="col-sm-8 ">
+                            <label for="thanhtoan" class="col-sm-3 control-label">Số tiền:</label>
+                            <div class="col-sm-9 ">
                                 <input type="text" class="form-control" placeholder="Nhập số tiền thanh toán">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label">Nợ: </label>
-                            <div class="col-lg-8 ">
+                            <label class="col-lg-3 control-label">Nợ: </label>
+                            <div class="col-lg-9 ">
                                 <h3 class="font-bold control-label text-danger text-right" name="VAT" id="VAT"> 51,123,000 vnđ </h3>
                             </div>
                         </div>
                         <hr />
                      
                         <div class="form-group">
-                            <div class="col-lg-7">
-                                <button class="btn btn-success">Thanh toán (F4)</button>
-                            </div>
-                            <div class="col-lg-5">
-                                <button class="btn btn-block btn-white">Hủy (F1)</button>
-                            </div>
-                        
+                            <button class="btn btn-block btn-lg btn-success">Thanh toán (F4)</button>
                         </div>
                     </fieldset>
                 </div>

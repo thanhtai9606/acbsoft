@@ -406,6 +406,7 @@ CREATE TABLE [Purchasing].[PurchaseOrderHeader] (
 CREATE TABLE [Purchasing].[PurchaseOrderDetail] (
     [PurchaseOrderID]       INT            NOT NULL,
     [PurchaseOrderDetailID] INT            IDENTITY (1, 1) NOT NULL,
+    [DueDate]               DATETIME       NOT NULL,
     [OrderQty]              SMALLINT       NOT NULL,
     [ProductID]             INT            NOT NULL,
     [UnitPrice]             MONEY          NOT NULL,
@@ -423,6 +424,18 @@ CREATE TABLE [Purchasing].[PurchaseOrderDetail] (
     CONSTRAINT [CK_PurchaseOrderDetail_RejectedQty] CHECK ([RejectedQty]>=(0.00))
 );
 
+-- Payment History
+CREATE TABLE [Purchasing].[Payment] (
+    [BusinessEntityID]        INT                   NOT NULL, -- Sử dụng ID này để lấy ra tên người quản lý, sđt, địa chỉ nhà cung cấp
+    [Name]                    NVARCHAR (256)        NOT NULL,-- Tên Nhà Cung cấp
+    [Paid]                    MONEY                 NOT NULL, -- Đánh giá nhà cung cấp 
+    [Debt]                    MONEY                 CONSTRAINT [DF_Vendor_ActiveFlag] DEFAULT ((1)) NOT NULL, -- Kiểm tra xem nhà cung cấp còn hoạt động hoặc nhập hàng không
+    [PurchasingWebServiceURL] NVARCHAR (1024)       NULL,
+    [ModifiedDate]            DATETIME              CONSTRAINT [DF_Vendor_ModifiedDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_Vendor_BusinessEntityID] PRIMARY KEY CLUSTERED ([BusinessEntityID] ASC),
+    CONSTRAINT [FK_Vendor_BusinessEntity_BusinessEntityID] FOREIGN KEY ([BusinessEntityID]) REFERENCES [Person].[BusinessEntity] ([BusinessEntityID]),
+    CONSTRAINT [CK_Vendor_CreditRating] CHECK ([CreditRating]>=(1) AND [CreditRating]<=(5))
+);
 
 
 CREATE TABLE [Production].[ProductPhoto] (

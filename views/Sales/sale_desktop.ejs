@@ -188,8 +188,8 @@
                                     <div class="panel-body">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label class="col-lg-3 control-label">Tên KH: </label>
-                                                <div class="input-group col-lg-9 ">
+                                                <label class="col-lg-4 control-label">Tên KH: </label>
+                                                <div class="input-group col-lg-8 ">
                                                     <input type="text" class="form-control" placeholder="Tìm khách hàng (F7)">
                                                     <span class="input-group-btn">
                                                         <button type="button" class="btn btn-primary">
@@ -199,23 +199,23 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-3 control-label">Địa chỉ: </label>
+                                                <label class="col-lg-4 control-label">Địa chỉ: </label>
                     
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-8">
                                                     <input type="text" placeholder="Địa chỉ của khách hàng" disabled="disabled" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-3 control-label">ĐThoai: </label>
+                                                <label class="col-lg-4 control-label">ĐThoai: </label>
                     
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-8">
                                                     <input type="text" placeholder="Mã khách hàng" disabled="disabled" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-lg-3 control-label">SLượng: </label>
+                                                <label class="col-lg-4 control-label">SLượng: </label>
                                             
-                                                <div class="col-lg-9">
+                                                <div class="col-lg-8">
                                                     <input type="text" placeholder="Nhập vào số lượng" class="form-control"  name="Qty" id="Qty" disabled="disabled">
                                                 </div>
                                             </div>
@@ -231,7 +231,7 @@
                                                 <label class="col-lg-4 control-label">VAT: </label>
                                             
                                                 <div class="col-lg-8">
-                                                    <h4 class=" control-label text-success text-right" name="VAT" id="VAT"> 0 </h4>
+                                                   <input type="text" class="form-control" name="VAT" placeholder="0">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -243,15 +243,13 @@
                                                         <button type="button" class="btn btn-outline btn-primary">
                                                             <i class="fa fa-dollar" aria-hidden="true"></i>
                                                         </button>
-                                                        <button type="button" class="btn btn-outline btn-primary">
-                                                           %
-                                                        </button>
+                                                        <button type="button" class="btn btn-outline btn-primary">%</button>
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="hr-line-dashed"></div>
                                             <div class="form-group">
-                                                    <h4 class="col-lg-4 control-label">KH phải trả: </h4>
+                                                    <label class="col-lg-4 control-label">KH phải trả: </label>
                                                 
                                                     <div class="col-lg-8">
                                                         <h4 class="control-label text-info text-right">0</h4>
@@ -261,7 +259,7 @@
                                                 <label class="col-lg-4 control-label">Khách đưa: </label>
                                             
                                                 <div class="col-lg-8">
-                                                    <input type="text" placeholder="Nhập vào số tiền" class="form-control">
+                                                    <input type="text" placeholder="Nhập vào số tiền" class="form-control form-lg">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -272,7 +270,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="button" class="btn btn-block btn-success">Thanh toán (F4) </button>
+                                                <button type="button" class="btn btn-block btn-success btn-lg">Thanh toán (F4) </button>
                                             </div>
                                         </form>
                                     </div>
@@ -281,12 +279,17 @@
                                     <div class="panel-body">
                                         <form action="" method="POST" class="form-horizontal" role="form">
                     
-                                            <div class="form-group">
-                                                <label for="tax" class="col-sm-2 control-label">Thuế: </label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" name="Tax" id="tax" class="form-control" value="" required="required" pattern="" title="">
-                                                </div>
-                                            </div>
+                                           
+                                           <div class="form-group">
+                                               <label for="dropTax" class="col-sm-2 control-label">Thuế:</label>
+                                               <div class="col-sm-10">
+                                                   <select name="dropTAX" id="dropTax" class="form-control" required="required">
+                                                       <option value="0">Giá đã bao gồm thuế</option>
+                                                       <option value="1">Giá đã chưa tính thuế</option>
+                                                   </select>
+                                               </div>
+                                           </div>
+                                           
                     
                                             <div class="form-group">
                                                 <label for="ListPrice" class="col-sm-2 control-label">Bảng giá:</label>
@@ -342,7 +345,7 @@
                 WinMove();
                 showDataTables();
                 rowClickEvent();
-               
+                $('#topbar').hide();
             });
 
             function showDataTables() {
