@@ -28,34 +28,29 @@
                 <li class="@Html.IsSelected(controller: "Dashboards")">
                     <a href="@Url.Action("Dashboard_1", "Dashboards")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboard</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Dashboards", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="/Dashboards/">Dashboard v.1</a></li>
-                        <li class="@Html.IsSelected(action: "Dashboard_2")"><a href="@Url.Action("Dashboard_2", "Dashboards")">Dashboard v.2</a></li>
-                        <li class="@Html.IsSelected(action: "Dashboard_3")"><a href="@Url.Action("Dashboard_3", "Dashboards")">Dashboard v.3</a></li>
-                        <li class="@Html.IsSelected(action: "Dashboard_4_1")"><a href="@Url.Action("Dashboard_4_1", "Dashboards")">Dashboard v.4</a></li>
-                        <li class="@Html.IsSelected(action: "Dashboard_5")"><a href="@Url.Action("Dashboard_5", "Dashboards")">Dashboard v.5</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="/">Dashboard v.1</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_2")"><a href="/Dashboard_2">Dashboard v.2</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_3")"><a href="/Dashboard_3">Dashboard v.3</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_4_1")"><a href="/Dashboard_4">Dashboard v.4</a></li>
+                        <li class="@Html.IsSelected(action: "Dashboard_5")"><a href="/Dashboard_5">Dashboard v.5</a></li>
                     </ul>
                 </li>
                 <li class="@Html.IsSelected(controller: "Sale")">
                     <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label" data-i18n="nav.Sale">Sale</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Sale", cssClass: "in")">
                         <li class="@Html.IsSelected(action: "Flot")"><a href="/Sales/">Desk Bán Hàng</a></li>
-                        <li class="@Html.IsSelected(action: "Morris")"><a href="@Url.Action("Morris", "Sale")">Morris.js Charts</a></li>
-                        <li class="@Html.IsSelected(action: "Rickshaw")"><a href="@Url.Action("Rickshaw", "Sale")">Rickshaw Charts</a></li>
-                        <li class="@Html.IsSelected(action: "Chartjs")"><a href="@Url.Action("Chartjs", "Sale")">Chart.js</a></li>
-                        <li class="@Html.IsSelected(action: "Chartist")"><a href="@Url.Action("Chartist", "Sale")">Chartist</a></li>
-                        <li class="@Html.IsSelected(action: "C3charts")"><a href="@Url.Action("C3charts", "Sale")">c3 charts</a></li>
-                        <li class="@Html.IsSelected(action: "Peity")"><a href="@Url.Action("Peity", "Sale")">Peity Charts</a></li>
-                        <li class="@Html.IsSelected(action: "Sparkline")"><a href="@Url.Action("Sparkline", "Sale")">Sparkline Charts</a></li>
+                        <li class="@Html.IsSelected(action: "Morris")"><a href="/Sales/Sale_List">Danh sách Đơn hàng</a></li>
+                        <li class="@Html.IsSelected(action: "Rickshaw")"><a href="/Sales/Sale_Return">Trả Hàng</a></li>
                     </ul>
                 </li>
-                <li class="@Html.IsSelected(controller: "Order")">
-                    <a href="#"><i class="fa fa-truck"></i> <span class="nav-label" data-i18n="nav.Order">Nhập hàng </span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Order", cssClass: "in")">
-                        <li class="@Html.IsSelected(action: "BasicFroms")"><a href="/Order/Order">Desk Nhập hàng</a></li>
-                        <li class="@Html.IsSelected(action: "Advanced")"><a href="@Url.Action("Advanced", "Order")">Trả Hàng</a></li>
-                        <li class="@Html.IsSelected(action: "Wizard")"><a href="@Url.Action("Wizard", "Order")">Kiểm Hàng</a></li>
-                        <li class="@Html.IsSelected(action: "FileUpload")"><a href="/Order/Vendor">Nhà Cung Cấp</a></li>
-                        <li class="@Html.IsSelected(action: "TextEditor")"><a href="/Order/Vendor_Group">Nhóm Nhà Cung Cấp</a></li>
+                <li class="@Html.IsSelected(controller: "Purchase")">
+                    <a href="#"><i class="fa fa-truck"></i> <span class="nav-label" data-i18n="nav.Purchase">Purchase</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Purchase", cssClass: "in")">
+                        <li class="@Html.IsSelected(action: "BasicFroms")"><a href="/Purchase/Order">Desk Nhập hàng</a></li>
+                        <li class="@Html.IsSelected(action: "Advanced")"><a href="/Purchase/Return">Trả Hàng</a></li>
+                        <li class="@Html.IsSelected(action: "Wizard")"><a href="/Purchase/Inventory)">Kiểm Hàng</a></li>
+                        <li class="@Html.IsSelected(action: "FileUpload")"><a href="/Purchase/Vendor">Nhà Cung Cấp</a></li>
+                        <li class="@Html.IsSelected(action: "TextEditor")"><a href="/Purchase/Vendor_Group">Nhóm Nhà Cung Cấp</a></li>
                     </ul>
                 </li>
                 <li class="@Html.IsSelected(controller: "Invoice")">

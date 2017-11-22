@@ -277,6 +277,27 @@ CREATE TABLE [Product].[ProductListPriceHistory] (
     CONSTRAINT [CK_ProductListPriceHistory_EndDate] CHECK ([EndDate]>=[StartDate] OR [EndDate] IS NULL)
 );
 
+-- TRANSACTION HISTORY
+CREATE TABLE [Production].[TransactionHistory] (
+    [TransactionID]        INT       IDENTITY (100000, 1) NOT NULL,
+    [ProductID]            INT       NOT NULL,
+    [ReferenceOrderID]     INT       NOT NULL,
+    [TransactionDate]      DATETIME  CONSTRAINT [DF_TransactionHistory_TransactionDate] DEFAULT (getdate()) NOT NULL,
+    [TransactionType]      NCHAR (1) NOT NULL,
+    [Quantity]             INT       NOT NULL,
+    [ActualCost]           MONEY     NOT NULL,
+    [ModifiedDate]         DATETIME  CONSTRAINT [DF_TransactionHistory_ModifiedDate] DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_TransactionHistory_TransactionID] PRIMARY KEY CLUSTERED ([TransactionID] ASC),
+    CONSTRAINT [FK_TransactionHistory_Product_ProductID] FOREIGN KEY ([ProductID]) REFERENCES [Production].[Product] ([ProductID]),
+    CONSTRAINT [CK_TransactionHistory_TransactionType] CHECK (upper([TransactionType])='P' OR upper([TransactionType])='S')
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_TransactionHistory_ProductID]
+    ON [Production].[TransactionHistory]([ProductID] ASC);
+
+
 
 ---SALE ---
 CREATE TABLE [Sales].[Customer] (
@@ -287,11 +308,13 @@ CREATE TABLE [Sales].[Customer] (
     CONSTRAINT [PK_Customer_CustomerID] PRIMARY KEY CLUSTERED ([CustomerID] ASC),
     CONSTRAINT [FK_Customer_Person_PersonID] FOREIGN KEY ([PersonID]) REFERENCES [Person].[Person] ([BusinessEntityID]),
 );
---Module bán hàng
+--Module bán hàng--
 CREATE TABLE [Sales].[SalesOrderHeader] (
     [SalesOrderID]           INT                   IDENTITY (1, 1) NOT FOR REPLICATION NOT NULL,
     [OrderDate]              DATETIME              CONSTRAINT [DF_SalesOrderHeader_OrderDate] DEFAULT (getdate()) NOT NULL,
+    [DueDate]                DATETIME              NOT NULL, -- Ngày giao khách hàng (Use online) nếu orderDate = DueDate thì bán hàng trực tiếp
     [ShipDate]               DATETIME              NULL,
+    [Status]                 TINYINT               CONSTRAINT [DF_SalesOrderHeader_Status] DEFAULT ((1)) NOT NULL,
     [OnlineOrderFlag]        BIT					CONSTRAINT [DF_SalesOrderHeader_OnlineOrderFlag] DEFAULT ((1)) NOT NULL,
     [SalesOrderNumber]       AS                    (isnull(N'SO'+CONVERT([nvarchar](23),[SalesOrderID]),N'*** ERROR ***')),
     [CustomerID]             INT                   NOT NULL,
@@ -308,7 +331,7 @@ CREATE TABLE [Sales].[SalesOrderHeader] (
     CONSTRAINT [FK_SalesOrderHeader_Employee_SalesPersonID] FOREIGN KEY ([SalesPersonID]) REFERENCES [HumanResources].[Employee] ([BusinessEntityID]),
     CONSTRAINT [CK_SalesOrderHeader_ShipDate] CHECK ([ShipDate]>=[OrderDate] OR [ShipDate] IS NULL),
     CONSTRAINT [CK_SalesOrderHeader_SubTotal] CHECK ([SubTotal]>=(0.00)),
-    CONSTRAINT [CK_SalesOrderHeader_TaxAmt] CHECK ([TaxAmt]>=(0.00)),
+    CONSTRAINT [CK_SalesOrderHeader_TaxAmt]   CHECK ([TaxAmt]>=(0.00)),
     CONSTRAINT [CK_SalesOrderHeader_Freight] CHECK ([Freight]>=(0.00))
 );
 

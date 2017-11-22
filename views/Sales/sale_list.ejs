@@ -1,0 +1,177 @@
+<% include ../layouts/Header.ejs %>
+<link rel="stylesheet" href="../lib/dataTables/datatables.min.css" />
+<link href="../lib_bower/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="../lib_bower/datatables/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../lib/iCheck/custom.css" />
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Danh sách Hàng Bán</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Home</a>
+            </li>
+            <li>
+                <a>Bán Hàng</a>
+            </li>
+            <li class="active">
+                <strong>Danh sách Hàng Bán</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Khác hàng</th>
+                                <th>Địa chỉ</th>
+                                <th>Điện thoại</th>
+                                <th>Nhân viên</th>
+                                <th>Ngày đặt</th>
+                                <th>Ngày hẹn giao</th>
+                                <th>Ngày giao hàng</th>
+                                <th>Bán Online</th>    
+                                <th>Trạng thái</th>                                                            
+                                <th>Tổng tiền</th>
+                                <th>Modified Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11</td>
+                                <td>Nguyễn</td>
+                                <td>Thu Dau Mot Binh Duong</td>
+                                <td>0123</td>
+                                <td>Dũng</td>
+                                <td>12/02/2017</td>
+                                <td></td>
+                                <td>12/02/2017</td>
+                                <td>0</td>
+                                <td>Hoàn thành</td>
+                                <td>123,000$</td>
+                                <td>12/01/2017</td>                               
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Nguyễn</td>
+                                <td>Thu Dau Mot Binh Duong</td>
+                                <td>0123</td>
+                                <td>Dũng</td>
+                                <td>12/02/2017</td>
+                                <td></td>
+                                <td>12/02/2017</td>
+                                <td>0</td>
+                                <td>Hoàn thành</td>
+                                <td>123,000$</td>
+                                <td>12/01/2017</td>
+                            </tr>
+                        </tbody>                           
+                            
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<% include ../layouts/Footer.ejs %>
+<script src="../lib/dataTables/datatables.min.js"></script>
+<!-- extend datatables -->
+<script src="../lib_bower/datatables/jszip.min.js"></script>
+<script src="../lib_bower/datatables/pdfmake.min.js"></script>
+<script src="../lib_bower/datatables/vfs_fonts.js"></script>
+<script src="../lib_bower/datatables/buttons.html5.min.js"></script>
+<script src="../lib_bower/datatables/buttons.print.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.fixedHeader.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.keyTable.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.responsive.min.js"></script>
+<script src="../lib_bower/datatables/responsive.bootstrap.min.js"></script>
+<script src="../lib_bower/datatables/dataTables.scroller.min.js"></script>
+<script src="../lib_bower/datatables/buttons.colVis.min.js"></script>
+
+<!-- ICheck Green -->
+<script src="../lib/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        showDataTables();
+        rowClickEvent();
+        showICheckGreen();
+
+    });
+
+    function showDataTables() {
+        $('.dataTables-example').DataTable({
+            pageLength: 10,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                { extend: 'copy' },
+                { extend: 'csv' },
+                { extend: 'excel', title: 'ExampleFile' },
+                { extend: 'pdf', title: 'ExampleFile' },
+
+                {
+                    extend: 'print',
+                    customize: function (win) {
+                        $(win.document.body).addClass('white-bg');
+                        $(win.document.body).css('font-size', '10px');
+
+                        $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                    }
+                },
+                {
+                    extend: "colvis",
+                    className: "btn-sm",
+                    text: "Ẩn/hiện"
+                }
+            ],
+            "columnDefs": [
+                // {
+                //     "targets": [2],
+                //     "visible": false,                               
+                // },
+                // {
+                //     "targets": [3],
+                //     "visible": false
+                // }
+            ],
+            select: true,
+            responsive: 0,
+            keys: true
+
+        });
+
+    }
+    function rowClickEvent() {
+        var table = $('.dataTables-example').DataTable();
+
+        $('.dataTables-example tbody').hover(function(){
+            $(this).css('cursor','pointer');
+        })
+        $('.dataTables-example tbody').on('click', 'tr', function () {
+            var data = table.row(this).data();
+            alert('You clicked on ' + data[0] + '\'s row');
+        });
+    }
+    function showICheckGreen() {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        }
+
+</script>
