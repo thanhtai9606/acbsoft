@@ -1,10 +1,7 @@
 <% include ../layouts/Header.ejs %>
-<link rel="stylesheet" href="../lib/dataTables/datatables.min.css" />
-<link href="../lib_bower/datatables/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="../lib_bower/datatables/dataTables.bootstrap.min.css" rel="stylesheet" />
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>E-commerce shoping cart</h2>
+        <h2>Giỏ hàng</h2>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">Home</a>
@@ -13,7 +10,7 @@
                 <a>E-commerce</a>
             </li>
             <li class="active">
-                <strong>Shoping cart</strong>
+                <strong>Giỏ hàng</strong>
             </li>
         </ol>
     </div>
@@ -24,7 +21,7 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
 
             <div class="ibox">
                 <div class="ibox-title">
@@ -110,7 +107,7 @@
                                         <div class="m-t-sm">
                                             <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
                                             |
-                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                            <a href="#" class="text-danger"><i class="fa fa-trash"></i> Remove item</a>
                                         </div>
                                     </td>
 
@@ -136,7 +133,7 @@
                 <div class="ibox-content">
                     <div class="table-responsive">
                         <table class="table shoping-cart-table">
-
+                           
                             <tbody>
                                 <tr>
                                     <td width="90">
@@ -159,9 +156,7 @@
                                         </dl>
 
                                         <div class="m-t-sm">
-                                            <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
-                                            |
-                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                            <a href="#" class="text-danger"><i class="fa fa-trash"></i> Remove item</a>
                                         </div>
                                     </td>
 
@@ -169,7 +164,7 @@
                                         $110,00
                                     </td>
                                     <td width="65">
-                                        <input type="text" class="form-control" placeholder="1">
+                                        <input type="number" class="form-control" placeholder="1">
                                     </td>
                                     <td>
                                         <h4>
@@ -290,164 +285,166 @@
             </div>
 
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Cart Summary</h5>
+                    <h5>Thông tin giỏ hàng</h5>
                 </div>
-                <div class="ibox-content">
-                    <span>
-                        Total
-                    </span>
-                    <h2 class="font-bold">
-                        $390,00
-                    </h2>
-
-                    <hr />
-                    <span class="text-muted small">
-                        *For United States, France and Germany applicable sales tax will be applied
-                    </span>
-                    <div class="m-t-sm">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Checkout</a>
-                            <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                <div class="ibox-content" style="">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab-1">
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a data-toggle="tab" href="#tab-2">Mở rộng</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-1" class="tab-pane active">
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">Tên KH: </label>
+                                            <div class="input-group col-lg-8 ">
+                                                <input type="text" class="form-control" placeholder="Tìm khách hàng (F7)">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-primary">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </button>                                                       
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">Địa chỉ: </label>
+                
+                                            <div class="col-lg-8">
+                                                <input type="text" placeholder="Địa chỉ của khách hàng" disabled="disabled" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">ĐThoai: </label>
+                
+                                            <div class="col-lg-8">
+                                                <input type="text" placeholder="Mã khách hàng" disabled="disabled" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">SLượng: </label>
+                                        
+                                            <div class="col-lg-8">
+                                                <input type="text" placeholder="Nhập vào số lượng" class="form-control"  name="Qty" id="Qty" disabled="disabled">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <h2 class="text-center text-info">Thanh Toán</h2>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">Tổng tiền: </label>                                            
+                                            <div class="col-lg-8">
+                                                <h3 class="control-label text-right text-info"  name="TotalLine" id="TotalLine"> 0 </h4>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">VAT: </label>
+                                        
+                                            <div class="col-lg-8">
+                                               <input type="text" class="form-control" name="VAT" placeholder="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">CKhấu: </label>
+                                        
+                                            <div class="input-group col-lg-8 ">
+                                                <input type="text" class="form-control" placeholder="0">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-outline btn-primary">
+                                                        <i class="fa fa-dollar" aria-hidden="true"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-outline btn-primary">%</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                                <label class="col-lg-4 control-label">KH phải trả: </label>
+                                            
+                                                <div class="col-lg-8">
+                                                    <h3 class="control-label text-info text-right font-bold">0</h3>
+                                                </div>
+                                            </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">Khách đưa: </label>
+                                        
+                                            <div class="col-lg-8">
+                                                <input type="text" placeholder="Nhập vào số tiền" class="form-control form-lg">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">Tiền thừa: </label>
+                                        
+                                            <div class="col-lg-8">
+                                                <h3 class=" text-warning text-right control-label font-bold">0</h3>
+                                            </div>
+                                        </div>
+                                        <div class="m-t-sm">
+                                            <div class="btn-group">
+                                                <a href="#" class="btn  btn-primary btn-lg"><i class="fa fa-shopping-cart"></i> Thanh toán (F4)</a>
+                                                <a href="#" class="btn btn-white btn-lg"> Hủy (F8)</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="tab-2" class="tab-pane">
+                                <div class="panel-body">
+                                    <form action="" method="POST" class="form-horizontal" role="form">
+                
+                                       
+                                       <div class="form-group">
+                                           <label for="dropTax" class="col-sm-2 control-label">Thuế:</label>
+                                           <div class="col-sm-10">
+                                               <select name="dropTAX" id="dropTax" class="form-control" required="required">
+                                                   <option value="0">Giá đã bao gồm thuế</option>
+                                                   <option value="1">Giá đã chưa tính thuế</option>
+                                               </select>
+                                           </div>
+                                       </div>
+                                       
+                
+                                        <div class="form-group">
+                                            <label for="ListPrice" class="col-sm-2 control-label">Bảng giá:</label>
+                                            <div class="col-sm-10">
+                                                <select name="ListPrice" id="ListPrice" class="form-control" required="required">
+                                                    <option value="">Bán lẻ</option>
+                                                    <option value="">Buôn</option>
+                                                </select>
+                                            </div>
+                                        </div>                  
+                                        
+                                        <div class="form-group">
+                                            <label for="Ghi chú" class="col-sm-2 control-label">Ghi chú:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="Note" id="Note" class="form-control" value="">
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                    </form>
+                
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Support</h5>
-                </div>
-                <div class="ibox-content text-center">
-
-
-
-                    <h3><i class="fa fa-phone"></i> +43 100 783 001</h3>
-                    <span class="small">
-                        Please contact with us if you have any questions. We are avalible 24h.
-                    </span>
-
-
-                </div>
-            </div>
-
-            <div class="ibox">
-                <div class="ibox-content">
-
-                    <p class="font-bold">
-                        Other products you may be interested
-                    </p>
-
-                    <hr />
-                    <div>
-                        <a href="#" class="product-name"> Product 1</a>
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-                    <hr />
-                    <div>
-                        <a href="#" class="product-name"> Product 2</a>
-                        <div class="small m-t-xs">
-                            Many desktop publishing packages and web page editors now.
-                        </div>
-                        <div class="m-t text-righ">
-
-                            <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        
 
         </div>
     </div>
 
 </div>
 <% include ../layouts/Footer.ejs %>
-
-<script src="../lib/dataTables/datatables.min.js"></script>
-<!-- extend datatables -->
-<script src="../lib_bower/datatables/jszip.min.js"></script>
-<script src="../lib_bower/datatables/pdfmake.min.js"></script>
-<script src="../lib_bower/datatables/vfs_fonts.js"></script>
-<script src="../lib_bower/datatables/buttons.html5.min.js"></script>
-<script src="../lib_bower/datatables/buttons.print.min.js"></script>
-<script src="../lib_bower/datatables/dataTables.fixedHeader.min.js"></script>
-<script src="../lib_bower/datatables/dataTables.keyTable.min.js"></script>
-<script src="../lib_bower/datatables/dataTables.responsive.min.js"></script>
-<script src="../lib_bower/datatables/responsive.bootstrap.min.js"></script>
-<script src="../lib_bower/datatables/dataTables.scroller.min.js"></script>
-<script src="../lib_bower/datatables/buttons.colVis.min.js"></script>
-
-<script type="text/javascript">
-        $(document).ready(function () {
-
-            showDataTables();
-            rowClickEvent();
-           
-        });
-
-        function showDataTables() {
-                $('.dataTables-example').DataTable({
-                    pageLength: 10,
-                    dom: '<"html5buttons"B>lTfgitp',
-                    buttons: [
-                        { extend: 'copy' },
-                        { extend: 'csv' },
-                        { extend: 'excel', title: 'ExampleFile' },
-                        { extend: 'pdf', title: 'ExampleFile' },
-
-                        {
-                            extend: 'print',
-                            customize: function (win) {
-                                $(win.document.body).addClass('white-bg');
-                                $(win.document.body).css('font-size', '10px');
-
-                                $(win.document.body).find('table')
-                                    .addClass('compact')
-                                    .css('font-size', 'inherit');
-                            }
-                        },
-                        {
-                            extend: "colvis",
-                            className: "btn-sm",
-                            text: "Ẩn/hiện"
-                        }
-                    ],
-                    "columnDefs": [
-                        // {
-                        //     "targets": [2],
-                        //     "visible": false,                               
-                        // },
-                        // {
-                        //     "targets": [3],
-                        //     "visible": false
-                        // }
-                    ],
-                    select: true,           
-                    responsive: !0,
-                    keys: true
-
-                });                 
-          
-        }
-        function rowClickEvent() {
-          var table = $('.dataTables-example').DataTable();
-            
-           $('.dataTables-example tbody').on('click', 'tr', function () {
-               var data = table.row( this ).data();
-               alert( 'You clicked on '+data[0]+'\'s row' );
-               $('#Qty').prop('disabled', false);
-           } );
-        }
-
-
-    </script>
