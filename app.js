@@ -7,7 +7,6 @@ var logger = require('morgan')
 var methodOverride = require('method-override')
 var session = require('express-session')
 var bodyParser = require('body-parser')
-var multer = require('multer')
 var errorHandler = require('errorhandler')
 
 var app = express()
@@ -24,7 +23,6 @@ app.use(session({ resave: true,
                   secret: 'uwotm8' }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(multer())
 app.use(express.static(path.join(__dirname, 'public')))
 
 

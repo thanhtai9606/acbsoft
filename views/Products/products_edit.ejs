@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../lib/daterangepicker/daterangepicker-bs3.css" />
 <link rel="stylesheet" href="../lib_bower/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
 <link rel="stylesheet" href="../lib_bower/select2/dist/css/select2.css" />
+
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2>Products Edit</h2>
@@ -78,13 +79,9 @@
                         <div class="panel-body">
 
                             <fieldset class="form-horizontal">
-                                <div class="form-group" hidden="hidden">
-                                    <label class="col-sm-2 control-label">ID:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="543"></div>
-                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Product Number:</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="..."></div>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder=""></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Product Category:</label>
@@ -103,6 +100,30 @@
                                     <label class="col-sm-2 control-label">Minimum quantity:</label>
                                     <div class="col-sm-10"><input type="text" class="form-control" placeholder="2"></div>
                                 </div>  
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Size:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="2" name="Size"></div>
+                                </div>  
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">SizeUnitMeasureCode:</label>
+                                    <div class="col-sm-10">
+                                        <select name="SizeUnitMeasureCode" id="SizeUnitMeasureCode" class="form-control">
+                                            <option value="A">1 Tháng</option>                                          
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Weight:</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="2" name="Weight"></div>
+                                </div>  
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">WeightUnitMeasureCode:</label>
+                                    <div class="col-sm-10">
+                                        <select name="WeightUnitMeasureCode" id="WeightUnitMeasureCode" class="form-control">
+                                            <option value="A">1 Tháng</option>                                          
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Waranty:</label>
                                     <div class="col-sm-10">
@@ -125,8 +146,7 @@
                         <div class="panel-body">
                             <div class="table-responsive">
                                
-                                <table class="table table-stripped table-bordered">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                                <table class="table table-stripped table-bordered" id="tblDiscount">
                                     <thead>
                                         <tr>
                                             <th>
@@ -150,213 +170,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>                                               
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                               
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <select class="form-control">
-                                                    <option selected>Group 1</option>
-                                                    <option>Group 2</option>
-                                                    <option>Group 3</option>
-                                                    <option>Group 4</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="10">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" placeholder="$10.00">
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="input-group date">
-                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2014">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-
                                     </tbody>
-
+                                    <tfoot>
+                                        <tr>                                           
+                                            <td colspan="5"></td>
+                                            <td>
+                                                
+                                                <button type="button" class="btn btn-primary" id="btnAddDiscount"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
 
@@ -365,12 +188,7 @@
                     <div id="tab-4" class="tab-pane">
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div class="col-lg-4 col-lg-offset-11">
-                                    <button type="button" class="btn btn-primary">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                                <table class="table table-bordered table-stripped">
+                                <table class="table table-bordered table-stripped" id="tblImages">
                                     <thead>
                                         <tr>
                                             <th>
@@ -388,115 +206,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/2s.jpg">
-                                            </td>
-                                            <td>
-                                                
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image1.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="1">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-primary btn-outline"><i class="fa fa-upload"></i> </button>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/1s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image2.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="2">
-                                            </td>
-                                            <td>
-                                                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                                    <span class="input-group-addon btn btn-default btn-file">
-                                                        <span class="fileinput-new">Select file</span>
-                                                        <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="..." />
-                                                    </span>
-                                                    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/3s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image3.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="3">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/4s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image4.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="4">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/5s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image5.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="5">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/6s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image6.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="6">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../Images/gallery/7s.jpg">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" disabled value="http://mydomain.com/images/image7.png">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control" value="7">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="fa fa-trash"></i> </button>
-                                            </td>
-                                        </tr>
                                     </tbody>
-                                    
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3"></td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary" id="btnMoreImg"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
 
@@ -520,13 +238,294 @@
 <script src="../lib/daterangepicker/daterangepicker.js"></script>
 <script src="../lib_bower/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script src="../lib_bower/select2/dist/js/select2.min.js"></script>
-
+<div id="modal-image" class="modal in">
+    <div id="filemanager" class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Image Manager</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <a href="https://localhost:443/opencart/admin/index.php?route=common/filemanager&amp;user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi&amp;target=input-image1&amp;thumb=thumb-image1"
+                            data-toggle="tooltip" title="" id="button-parent" class="btn btn-default" data-original-title="Parent">
+                            <i class="fa fa-level-up"></i>
+                        </a>
+                        <a href="https://localhost:443/opencart/admin/index.php?route=common/filemanager&amp;user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi&amp;target=input-image1&amp;thumb=thumb-image1"
+                            data-toggle="tooltip" title="" id="button-refresh" class="btn btn-default" data-original-title="Refresh">
+                            <i class="fa fa-refresh"></i>
+                        </a>
+                        <button type="button" data-toggle="tooltip" title="" id="button-upload" class="btn btn-primary" data-original-title="Upload">
+                            <i class="fa fa-upload"></i>
+                        </button>
+                        <button type="button" data-toggle="tooltip" title="" id="button-folder" class="btn btn-default" data-original-title="New Folder">
+                            <i class="fa fa-folder"></i>
+                        </button>
+                        <button type="button" data-toggle="tooltip" title="" id="button-delete" class="btn btn-danger" data-original-title="Delete">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="input-group">
+                            <input type="text" name="search" value="" placeholder="Search.." class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" data-toggle="tooltip" title="" id="button-search" class="btn btn-primary" data-original-title="Search">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6 text-center">
+                        <div class="text-center">
+                            <a href="https://localhost:443/opencart/admin/index.php?route=common/filemanager&amp;user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi&amp;directory=demo&amp;target=input-image1&amp;thumb=thumb-image1"
+                                class="directory" style="vertical-align: middle;">
+                                <i class="fa fa-folder fa-5x"></i>
+                            </a>
+                        </div>
+                        <label>
+                            <input type="checkbox" name="path[]" value="catalog/demo"> demo
+                        </label>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center">
+                        <a href="https://localhost:443/opencart/image/catalog/may bo chuyen game.jpg" class="thumbnail">
+                            <img src="https://localhost:443/opencart/image/cache/catalog/may bo chuyen game-100x100.jpg" alt="may bo chuyen  game.jpg"
+                                title="may bo chuyen  game.jpg">
+                        </a>
+                        <label>
+                            <input type="checkbox" name="path[]" value="catalog/may bo chuyen game.jpg"> may bo chuyen game.jpg</label>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center">
+                        <a href="https://localhost:443/opencart/image/catalog/cart.png" class="thumbnail">
+                            <img src="https://localhost:443/opencart/image/cache/catalog/cart-100x100.png" alt="cart.png" title="cart.png">
+                        </a>
+                        <label>
+                            <input type="checkbox" name="path[]" value="catalog/cart.png"> cart.png
+                        </label>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 text-center">
+                        <a href="https://localhost:443/opencart/image/catalog/opencart-logo.png" class="thumbnail">
+                            <img src="https://localhost:443/opencart/image/cache/catalog/opencart-logo-100x100.png" alt="opencart-logo. png"
+                                title="opencart-logo. png">
+                        </a>
+                        <label>
+                            <input type="checkbox" name="path[]" value="catalog/opencart-logo.png"> opencart-logo. png</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6 text-center">
+                        <a href="https://localhost:443/opencart/image/catalog/profile-pic.png" class="thumbnail">
+                            <img src="https://localhost:443/opencart/image/cache/catalog/profile-pic-100x100.png" alt="profile-pic.pn g"
+                                title="profile-pic.pn g">
+                        </a>
+                        <label>
+                            <input type="checkbox" name="path[]" value="catalog/profile-pic.png"> profile-pic.pn g</label>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+  <script type="text/javascript">
+  <!--
+  $('a.thumbnail').on('click', function(e) {
+      e.preventDefault();
+  
+          $('#thumb-image1').find('img').attr('src', $(this).find('img').attr('src'));
+      
+      $('#input-image1').val($(this).parent().find('input').val());
+  
+      $('#modal-image').modal('hide');
+  });
+  
+  $('a.directory').on('click', function(e) {
+      e.preventDefault();
+  
+      $('#modal-image').load($(this).attr('href'));
+  });
+  
+  $('.pagination a').on('click', function(e) {
+      e.preventDefault();
+  
+      $('#modal-image').load($(this).attr('href'));
+  });
+  
+  $('#button-parent').on('click', function(e) {
+      e.preventDefault();
+  
+      $('#modal-image').load($(this).attr('href'));
+  });
+  
+  $('#button-refresh').on('click', function(e) {
+      e.preventDefault();
+  
+      $('#modal-image').load($(this).attr('href'));
+  });
+  
+  $('input[name=\'search\']').on('keydown', function(e) {
+      if (e.which == 13) {
+          $('#button-search').trigger('click');
+      }
+  });
+  
+  $('#button-search').on('click', function(e) {
+      var url = 'index.php?route=common/filemanager&user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi&directory=';
+  
+      var filter_name = $('input[name=\'search\']').val();
+  
+      if (filter_name) {
+          url += '&filter_name=' + encodeURIComponent(filter_name);
+      }
+  
+          url += '&thumb=' + 'thumb-image1';
+      
+          url += '&target=' + 'input-image1';
+      
+      $('#modal-image').load(url);
+  });
+  //--></script>
+  <script type="text/javascript"><!--
+  $('#button-upload').on('click', function() {
+      $('#form-upload').remove();
+  
+      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file[]" value="" multiple="multiple" /></form>');
+  
+      $('#form-upload input[name=\'file[]\']').trigger('click');
+  
+      if (typeof timer != 'undefined') {
+          clearInterval(timer);
+      }
+  
+      timer = setInterval(function() {
+          if ($('#form-upload input[name=\'file[]\']').val() != '') {
+              clearInterval(timer);
+  
+              $.ajax({
+                  url: 'Products_Image',
+                  type: 'post',
+                  dataType: 'json',
+                  data: new FormData($('#form-upload')[0]),
+                  cache: false,
+                  contentType: false,
+                  processData: false,
+                  beforeSend: function() {
+                      $('#button-upload i').replaceWith('<i class="fa fa-circle-o-notch fa-spin"></i>');
+                      $('#button-upload').prop('disabled', true);
+                  },
+                  complete: function() {
+                      $('#button-upload i').replaceWith('<i class="fa fa-upload"></i>');
+                      $('#button-upload').prop('disabled', false);
+                  },
+                  success: function(json) {
+                      console.log(JSON.stringify(json));
+                      if (json['error']) {
+                          alert(json['error']);
+                      }
+  
+                      if (json['success']) {
+                          alert(json['success']);
+  
+                          $('#button-refresh').trigger('click');
+                      }
+                  },
+                  error: function(xhr, ajaxOptions, thrownError) {
+                      alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                  }
+              });
+          }
+      }, 500);
+  });
+  
+  $('#button-folder').popover({
+      html: true,
+      placement: 'bottom',
+      trigger: 'click',
+      title: 'Folder Name',
+      content: function() {
+          html  = '<div class="input-group">';
+          html += '  <input type="text" name="folder" value="" placeholder="Folder Name" class="form-control">';
+          html += '  <span class="input-group-btn"><button type="button" title="New Folder" id="button-create" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></span>';
+          html += '</div>';
+  
+          return html;
+      }
+  });
+  
+  $('#button-folder').on('shown.bs.popover', function() {
+      $('#button-create').on('click', function() {
+          $.ajax({
+              url: 'index.php?route=common/filemanager/folder&user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi&directory=',
+              type: 'post',
+              dataType: 'json',
+              data: 'folder=' + encodeURIComponent($('input[name=\'folder\']').val()),
+              beforeSend: function() {
+                  $('#button-create').prop('disabled', true);
+              },
+              complete: function() {
+                  $('#button-create').prop('disabled', false);
+              },
+              success: function(json) {
+                  if (json['error']) {
+                      alert(json['error']);
+                  }
+  
+                  if (json['success']) {
+                      alert(json['success']);
+  
+                      $('#button-refresh').trigger('click');
+                  }
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                  alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+              }
+          });
+      });
+  });
+  
+  $('#modal-image #button-delete').on('click', function(e) {
+      if (confirm('Are you sure?')) {
+          $.ajax({
+              url: 'index.php?route=common/filemanager/delete&user_token=AQ2EY3cvebwtyhXmwY6pvzNISR3bNXUi',
+              type: 'post',
+              dataType: 'json',
+              data: $('input[name^=\'path\']:checked'),
+              beforeSend: function() {
+                  $('#button-delete').prop('disabled', true);
+              },
+              complete: function() {
+                  $('#button-delete').prop('disabled', false);
+              },
+              success: function(json) {
+                  if (json['error']) {
+                      alert(json['error']);
+                  }
+  
+                  if (json['success']) {
+                      alert(json['success']);
+  
+                      $('#button-refresh').trigger('click');
+                  }
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                  alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+              }
+          });
+      }
+  });
+  //--></script>
+  </div>
 <script type="text/javascript">
     $(document).ready(function () {
 
         $('.summernote').summernote();
+        addMoreImages();
+        addMoreDiscount();
         showCalendar();
-
     });
     function showCalendar() {
         $('.input-group.date').datepicker({
@@ -538,5 +537,89 @@
             format: 'dd/mm/yyyy'
         });
     }
+
+    function addMoreImages()
+    {
+        var t= $('#tblImages');
+        let img_count = 1;
+        $('#btnMoreImg').on('click', function(){
+           var displayRow= ` <tr id='selected_row`+ img_count +`'>
+                                <td>
+                                    <a href="#" data-toggle='modal' data-target='#modal-image'> <img src="../Images/gallery/3s.jpg"></a>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" disabled value="http://mydomain.com/images/image3.png">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" value="0">
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger" id="btnRemove" onclick="removeRow(`+ img_count +`)" ><i class="fa fa-trash"></i> </button>
+                                </td>
+                            </tr>`;
+            t.find('tbody')
+            .append($(displayRow))
+            img_count++;
+        })
+       
+    }
+    function removeRow(id)
+    {
+        $('#selected_row'+id).remove();
+    }
+    function addMoreDiscount()
+    {
+        var t= $('#tblDiscount');
+        $('#btnAddDiscount').on('click', function(){
+            
+        let count = 1;
+        var displayRow=
+            `<tr id='selected_row`+ count +`'>
+                <td>
+                    <select class="form-control">
+                        <option selected>Group 1</option>
+                        <option>Group 2</option>
+                        <option>Group 3</option>
+                        <option>Group 4</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="0">
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="0.00 vnd">
+                </td>
+                <td>
+                    <div class="input-group date">
+                        <span class="input-group-addon" >
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control" value="07/01/2014">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group date">
+                        <span class="input-group-addon"'>
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                        <input type="text" class="form-control" value="07/01/2014">
+                    </div>
+                </td>
+                <td>
+                    <button class="btn btn-danger" onclick=removeRow(`+ count +`)>
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>`;
+
+        
+        
+        t.find('tbody')
+        .append(displayRow);
+        count++;
+        showCalendar();
+        });
+    }
+
   
 </script>
