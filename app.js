@@ -12,7 +12,7 @@ var errorHandler = require('errorhandler')
 var app = express()
 
 // all environments
-app.set('port', process.env.PORT || 1234)
+app.set('port', process.env.PORT || 8080)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')))
